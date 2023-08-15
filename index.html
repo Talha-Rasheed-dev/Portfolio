@@ -1,13 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Talha Rasheed</title>
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- css links -->
     <link rel="stylesheet" href="css/style.css">
-   
 </head>
+
 <body>
-    <h1>Welcome to Github ' Talha Rasheed '</h1>
+    <!-- header design -->
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- home section design -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hy, It's Me</h3>
+            <h1>Naeem ur Rahman Sajid</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>Welcome to my portfolio! Here you will find examples of my work and skills as a <span>Frontend
+                    Developer</span> | <span>MERN Stack Developer</span> | <span>Computer Scientist</span> |
+                <span>Javascript Specialist</span>.
+            </p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/naeem-ur-rahman-sajid/"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://www.instagram.com/naeemurrahmansajid/"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://github.com/Naeem-ur-rahman"><i class='bx bxl-github'></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100014690500820"><i class='bx bxl-facebook'></i></a>
+                <a href="mailto:naeemur1001@gmail.com"><i class='bx bxl-gmail'></i></a>
+                <a href="tel:+923211610373"><i class='bx bx-phone-call'></i></a>
+            </div>
+            <a href="CV/Naeem ur Rahman Sajid (Resume).pdf" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="img/home.png" alt="my pic">
+        </div>
+    </section>
+
+    <!-- about section design -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="img/about.png" alt="my-img">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Frontend Developer!</h3>
+            <p>As a passionate Frontend Developer with a BS in Computer Science and half a year of experience in web
+                development, I have developed a diverse skill set in <span>CSS3</span>, <span>HTML5</span>,
+                <span>JavaScript</span>, <span>MERN Stack</span>, and <span>Figma</span>,
+                with a special focus on React Native for cross-platform development. I strive to stay up-to-date with
+                the latest trends and technologies in the field, and I'm always eager to learn new things. My strong
+                attention to detail, problem-solving abilities, and collaborative mindset make me a valuable team player
+                who is dedicated to delivering high-quality work that meets the needs of clients and users.
+            </p>
+            <p>
+                Outside of work, I enjoy playing sports like <span>Football</span>, <span>Chess</span>, and
+                <span>Cricket</span>, which help me stay active and
+                maintain a healthy work-life balance. These hobbies have also taught me the importance of strategy,
+                teamwork, and perseverance, which I apply to my work as a Frontend Developer.
+            </p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- Services section  -->
+    <section class="services" id="services">
+        <h2 class="heading">Our <span>Services</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Web Development</h3>
+                <p>We specialize in creating high-quality and responsive web applications tailored to meet the unique
+                    needs of our clients. Our team of experienced developers uses the latest technologies and industry
+                    best practices to deliver innovative and user-friendly solutions.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bxs-paint'></i>
+                <h3>UI/UX Design</h3>
+                <p>Our UI/UX design services in Figma create user-friendly and visually appealing digital products. We
+                    collaborate closely with our clients to understand their users' needs and design products that meet
+                    their requirements while also reflecting their brand identity.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bxs-chess'></i>
+                <h3>Chess Tutor</h3>
+                <p>Our chess tutoring services offer personalized coaching for players of all levels, helping them
+                    improve their skills. Our experienced tutors use theoretical training and practical
+                    play to provide lessons that help clients become better chess players and achieve success
+                    on the board.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio section  -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Projects</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/youtube clone.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>Youtube Clone</h4>
+                    <p>First Project in REACT with Youtube Api. Add Search and Video Play Option.</p>
+                    <a href="https://nurs-youtube.netlify.app/"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/Trade hub.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>Trade Hub</h4>
+                    <p>Trade Hub is an ecommerce platform designed to provide users with a seamless online shopping
+                        experience.</p>
+                    <a href="https://shopienurs.000webhostapp.com/"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/Luxliving.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>Luxliving</h4>
+                    <p>A Customs Css Responsive Design less than 5200px and added custom responsive carosel and sliders.
+                        My Second Project Design with Haddocksoft.</p>
+                    <a href="https://naeem-ur-rahman.github.io/LuxLiving-Clone/"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/HSG Properties.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>HSG PROPERTIES</h4>
+                    <p>A Customs Css Responsive Design without Libraries. My First Project Design with Haddocksoft.</p>
+                    <a href="https://naeem-ur-rahman.github.io/HSG-Properties-Clone/"><i
+                            class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/Reformulear un texte.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>REFORMULEAR UNTEXT</h4>
+                    <p>A Responsive Design for the paraphrasing.io</p>
+                    <a href="https://naeem-ur-rahman.github.io/Reformuler-untext/"><i
+                            class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/portfolio 4.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>E-Clinic 2.0</h4>
+                    <p> E-Clinic, where we offer a range of sections and services to cater to your healthcare
+                        needs. Our website is designed to give you a seamless and user-friendly experience.</p>
+                    <a href="https://naeem-ur-rahman.github.io/E-Clinic-Web-Project-2.0/"><i
+                            class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/portfolio1.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>CS Society</h4>
+                    <p>About
+                        A website for my university's Computer Science Society. Its Introduction to
+                        the society, showcasing its activities and upcoming events.</p>
+                    <a href="https://naeem-ur-rahman.github.io/Computer-Science-Society-Website/"><i
+                            class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/portfolio3.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>CSS Elements</h4>
+                    <p>During my learning phase, I have uploaded various CSS web elements that have proven to helpful in
+                        reusing and implementing them in future projects.</p>
+                    <a href="https://naeem-ur-rahman.github.io/Web-CSS-Elements/"><i
+                            class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/Resposive Carosel.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>Responsive Carosel</h4>
+                    <p>Custom Resposive Carosel with pagination</p>
+                    <a href="https://naeem-ur-rahman.github.io/Web-CSS-Elements/Responsive%20Carosel/index.html"><i
+                            class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/Age Calculator.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>Age Calculator</h4>
+                    <p>The Age Calculator is a handy tool designed to determine a person's age based on their birth date
+                        and the current date.</p>
+                    <a href="https://naeem-ur-rahman.github.io/Web-CSS-Elements/Age%20Calculator/index.html"><i
+                            class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="img/portfolio pics/portfolio2.png" alt="portfolio">
+                <div class="portfolio-layer">
+                    <h4>E-Clinic</h4>
+                    <p>Web site Design for Desktop Screen. Despite having no prior knowledge of responsiveness.</p>
+                    <a href="https://naeem-ur-rahman.github.io/E-Clinic-Web-Project/"><i
+                            class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- contacts Section  -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Moblie Number">
+                <input type="text" placeholder="Email Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by NuRs | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <!-- scrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js  -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- js code  -->
+    <script src="js/script.js"></script>
 </body>
+
 </html>
