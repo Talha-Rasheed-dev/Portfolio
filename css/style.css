@@ -1,0 +1,13 @@
+       
+ h1{
+    width: 80%;
+    height: 200px;
+    text-align: center;
+    background-color: brown;
+    color: white;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
