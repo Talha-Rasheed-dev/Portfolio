@@ -52,7 +52,7 @@ ScrollReveal().reveal('.home-content p', { origin: 'right' });
 
 //========================= typed text =================================//
 const typed = new Typed('.multiple-text', {
-    strings: ['Backend Developer', 'PHP Developer', 'Codenightier', 'Laravel'],
+    strings: ['Backend Developer', 'PHP Developer', 'Codenightier Developer', 'Laravel Developer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
