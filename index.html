@@ -259,17 +259,22 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
 
-        <form action="#">
+        <form action="form-to-email/submit.php" method="post">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
+                <input type="text" placeholder="Full Name" name="name">
                 <input type="email" placeholder="Email Address">
             </div>
             <div class="input-box">
                 <input type="number" placeholder="Moblie Number">
-                <input type="text" placeholder="Email Subject">
+                <input type="text" placeholder="Email Subject" name="email">
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
+            <div class="mb-3">
+                <label  id="captcha"></label>
+                <input type="num" name="captcha-response">
+            </div>
+            <input type="hidden" name="captcha-solution">
+            <textarea name="message" id=""  cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit"  value="Send Message" class="btn">
         </form>
     </section>
 

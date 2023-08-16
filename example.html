@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+		<title>PHP Form to Email</title>
+	</head>
+	<body>
+		<div class="container my-5">
+			<h1 class="mb-5">PHP Form to Email</h1>
+			<form class="mb-5" action="form-to-email/submit.php" method="post">
+				<div class="mb-3">
+					<label class="form-label">Name:</label>
+					<input class="form-control" type="text" name="name">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Email:</label>
+					<input class="form-control" type="email" name="email">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Message:</label>
+					<textarea class="form-control" name="message"></textarea>
+				</div>
+				<div class="mb-3">
+					<label class="form-label" id="captcha"></label>
+					<input class="form-control" type="num" name="captcha-response">
+				</div>
+				<input type="hidden" name="captcha-solution">
+				<button class="btn btn-primary" type="submit">Submit</button>
+			</form>
+			<p>Developed by <a href="https://robertd.co.uk">Robert Dixon</a></p>
+		</div>
+		<script src="form-to-email/js/script.js"></script>
+	</body>
+</html>
