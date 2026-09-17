@@ -1,394 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Talha Rasheed - Software Developer Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talha Codesd — Backend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1b1e2a;
+    --bg-soft:#22263670;
+    --panel:rgba(255,255,255,0.04);
+    --panel-line:rgba(255,255,255,0.09);
+    --white:#f4f5fa;
+    --dim:#9a9db3;
+    --purple:#7c3aed;
+    --purple-light:#a78bfa;
+    --cyan:#22d3ee;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--purple); color:#fff; }
+  a{ color:inherit; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; }
+  .sora{ font-family:'Sora', sans-serif; }
 
-    <!-- Meta Description -->
-    <meta name="description" content="Discover Talha Rasheed portfolio, showcasing expertise in backend development, PHP, Laravel, and POS systems.">
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 32px; position:relative; z-index:2; }
 
-    <!-- Meta Keywords -->
-    <meta name="keywords" content="Talha Rasheed,Software Developer ,Backend Developer, PHP, Laravel, POS systems, Web Development, Portfolio">
+  /* ---------- Nav ---------- */
+  nav.topnav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(27,30,42,0.75); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--panel-line);
+  }
+  .nav-inner{ max-width:1080px; margin:0 auto; padding:0 32px; height:72px; display:flex; align-items:center; justify-content:space-between; }
+  .nav-brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .nav-brand .mark{
+    width:34px; height:34px; border-radius:50%; border:1.5px solid var(--purple-light);
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle at 35% 30%, rgba(167,139,250,0.35), transparent 70%);
+  }
+  .nav-brand .mark svg{ width:16px; height:16px; }
+  .nav-brand span{ font-family:'Sora', sans-serif; font-weight:600; font-size:16px; color:#fff; }
+  .nav-links{ display:flex; gap:30px; list-style:none; margin:0; padding:0; }
+  .nav-links a{ text-decoration:none; font-size:14px; color:var(--dim); transition:color 0.2s ease; }
+  .nav-links a:hover{ color:#fff; }
+  .nav-toggle{ display:none; background:none; border:1px solid var(--panel-line); color:#fff; border-radius:6px; width:38px; height:38px; font-size:16px; }
+  @media (max-width:760px){ .nav-links{ display:none; } .nav-toggle{ display:block; } }
+  #mobile-menu{ display:none; }
+  #mobile-menu.open{
+    display:flex; flex-direction:column;
+    background:rgba(20,22,32,0.97); backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--panel-line); padding:8px 32px 18px;
+  }
+  #mobile-menu a{ text-decoration:none; color:var(--dim); padding:13px 0; font-size:14.5px; border-bottom:1px solid var(--panel-line); }
+  #mobile-menu a:last-child{ border-bottom:none; }
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://talha-rasheed-dev.github.io/Portfolio/">
+  /* ---------- Hero ---------- */
+  header.hero{ padding:80px 0 60px; position:relative; z-index:2; overflow:hidden; }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center; }
+  .eyebrow{ font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--purple-light); font-weight:600; margin:0 0 18px; }
+  h1.name{ font-family:'Sora', sans-serif; font-weight:800; font-size:clamp(38px, 5.6vw, 54px); line-height:1.12; margin:0 0 22px; color:#fff; }
+  p.summary{ font-size:16.5px; color:var(--dim); max-width:50ch; margin:0 0 34px; }
+  p.summary strong{ color:#fff; font-weight:600; }
+  .outline-btn{
+    display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+    font-size:14px; font-weight:600; color:#fff;
+    padding:14px 28px; border-radius:6px;
+    border:1px solid var(--cyan);
+    box-shadow:0 0 0 0 rgba(34,211,238,0.0);
+    transition:box-shadow 0.3s ease, background 0.3s ease;
+  }
+  .outline-btn:hover{ background:rgba(34,211,238,0.08); box-shadow:0 0 24px 0 rgba(34,211,238,0.35); }
 
-    <!-- Open Graph Meta Tags for Social Media Sharing -->
-    <meta property="og:title" content="Talha Rasheed - Software Developer Portfolio">
-    <meta property="og:description" content="Explore Talha Rasheed expertise in backend development, PHP, Laravel, and POS systems.">
-    <meta property="og:url" content="https://talha-rasheed-dev.github.io/Portfolio/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://talha-rasheed-dev.github.io/Portfolio/assets/profile-image.jpg">
+  /* ---------- Isometric scene ---------- */
+  .iso-stage{ position:relative; height:340px; perspective:900px; }
+  .iso-tower{ position:absolute; }
+  .cube{ position:relative; transform-style:preserve-3d; }
+  .cube .face{ position:absolute; }
+  .beam{
+    position:absolute; left:50%; bottom:100%; transform:translateX(-50%);
+    width:26px; border-radius:50% 50% 0 0;
+    background:linear-gradient(to top, rgba(124,58,237,0.55), rgba(34,211,238,0.35), transparent);
+    filter:blur(2px);
+    animation:beamPulse 3.2s ease-in-out infinite;
+  }
+  @keyframes beamPulse{ 0%,100%{ opacity:0.55; } 50%{ opacity:1; } }
 
-    <!-- Twitter Card for Better Visibility on Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Talha Rasheed - Backend Developer Portfolio">
-    <meta name="twitter:description" content="Discover Talha Rasheed expertise in backend development, PHP, Laravel, and POS systems.">
-    <meta name="twitter:image" content="https://talha-rasheed-dev.github.io/Portfolio/assets/profile-image.jpg">
+  .t1{ left:2%; top:38%; animation:towerFloat 7s ease-in-out infinite; }
+  .t2{ left:38%; top:6%; animation:towerFloat 8s ease-in-out infinite; animation-delay:0.4s; }
+  .t3{ left:70%; top:44%; animation:towerFloat 9s ease-in-out infinite; animation-delay:0.8s; }
+  @keyframes towerFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-12px); } }
 
-    <!-- Robots Meta Tag -->
-    <meta name="robots" content="index, follow">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-       "name": "Asim Ali",
-      "jobTitle": "Backend Developer",
-      "url": "https://asimgee105.github.io/Portfolio/",
-      "sameAs": [
-      "https://github.com/asimgee",
-      "mailto:asimgee105@gmail.com"
-    ]
+  .particle{
+    position:absolute; width:4px; height:4px; border-radius:50%; background:var(--cyan);
+    box-shadow:0 0 8px 2px rgba(34,211,238,0.6);
+    animation:rise 4s linear infinite;
+    opacity:0;
+  }
+  @keyframes rise{ 0%{ transform:translateY(0); opacity:0; } 15%{ opacity:1; } 90%{ opacity:0.4; } 100%{ transform:translateY(-160px); opacity:0; } }
+
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; } .iso-stage{ height:220px; } }
+
+  /* ---------- Reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  .reveal-stagger > *{ opacity:0; transform:translateY(16px); transition:opacity 0.55s ease, transform 0.55s ease; }
+  .reveal-stagger.in > *{ opacity:1; transform:translateY(0); }
+  .reveal-stagger.in > *:nth-child(1){ transition-delay:0.05s; }
+  .reveal-stagger.in > *:nth-child(2){ transition-delay:0.12s; }
+  .reveal-stagger.in > *:nth-child(3){ transition-delay:0.19s; }
+  .reveal-stagger.in > *:nth-child(4){ transition-delay:0.26s; }
+  .reveal-stagger.in > *:nth-child(5){ transition-delay:0.33s; }
+  .reveal-stagger.in > *:nth-child(6){ transition-delay:0.4s; }
+  .reveal-stagger.in > *:nth-child(7){ transition-delay:0.47s; }
+  .reveal-stagger.in > *:nth-child(8){ transition-delay:0.54s; }
+
+  /* ---------- Sections ---------- */
+  section{ padding:70px 0; border-top:1px solid var(--panel-line); position:relative; z-index:2; }
+  .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:40px; }
+  h2.section-title{ font-family:'Sora', sans-serif; font-weight:700; font-size:27px; margin:0; color:#fff; }
+  h2.section-title .accent{ color:var(--cyan); }
+  .section-note{ font-size:13px; color:var(--dim); white-space:nowrap; }
+
+  /* ---------- Experience ---------- */
+  .timeline{ position:relative; padding-left:26px; }
+  .timeline::before{ content:""; position:absolute; left:0; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--purple), var(--cyan)); opacity:0.5; }
+  .role{ position:relative; padding-bottom:42px; }
+  .role:last-child{ padding-bottom:0; }
+  .role::before{ content:""; position:absolute; left:-31px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--bg); border:2px solid var(--cyan); box-shadow:0 0 10px 2px rgba(34,211,238,0.4); }
+  .role .when{ font-family:'Sora', sans-serif; font-size:13px; color:var(--purple-light); margin:0 0 4px; }
+  .role h3{ font-family:'Sora', sans-serif; font-weight:600; font-size:19px; margin:0 0 2px; color:#fff; }
+  .role .where{ font-size:13.5px; color:var(--dim); margin:0 0 12px; }
+  .role ul{ margin:0; padding-left:18px; color:var(--dim); font-size:14.5px; }
+  .role ul li{ margin-bottom:7px; }
+  .role ul li::marker{ color:var(--cyan); }
+
+  /* ---------- Services ---------- */
+  .service-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; }
+  .service-card{
+    background:var(--panel); border:1px solid var(--panel-line); border-radius:14px; padding:24px;
+    transition:transform 0.3s ease, border-color 0.3s ease;
+  }
+  .service-card:hover{ transform:translateY(-4px); border-color:var(--purple-light); }
+  .service-card .num{ font-family:'Sora', sans-serif; font-size:13px; color:var(--cyan); margin-bottom:12px; }
+  .service-card h3{ font-family:'Sora', sans-serif; font-weight:600; font-size:17.5px; margin:0 0 8px; color:#fff; }
+  .service-card p{ font-size:14px; color:var(--dim); margin:0; }
+  @media (max-width:640px){ .service-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Skills ---------- */
+  .skill-groups{ display:grid; grid-template-columns:repeat(4, 1fr); gap:28px; }
+  .skill-group h4{ font-family:'Sora', sans-serif; font-weight:600; font-size:14px; color:var(--purple-light); margin:0 0 12px; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{ font-size:13px; padding:7px 12px; border-radius:7px; color:var(--dim); border:1px solid var(--panel-line); background:var(--panel); transition:border-color 0.2s ease, color 0.2s ease; }
+  .chip:hover{ border-color:var(--cyan); color:#fff; }
+  @media (max-width:760px){ .skill-groups{ grid-template-columns:1fr 1fr; } }
+
+  /* ---------- Projects ---------- */
+  .project-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; }
+  .project-row{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:20px 22px; border-radius:12px; text-decoration:none;
+    background:var(--panel); border:1px solid var(--panel-line);
+    transition:transform 0.3s ease, border-color 0.3s ease;
+  }
+  .project-row:hover{ transform:translateY(-3px); border-color:var(--cyan); }
+  .project-row .pname{ font-family:'Sora', sans-serif; font-weight:600; font-size:16.5px; color:#fff; }
+  .project-row .pclient{ font-size:12.5px; color:var(--dim); }
+  .project-row .purl{ font-size:13px; color:var(--cyan); }
+  @media (max-width:640px){ .project-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Curved wave + footer ---------- */
+  .wave-wrap{ position:relative; margin-top:40px; height:120px; overflow:hidden; }
+  .wave-shape{
+    position:absolute; left:50%; bottom:-60%; transform:translateX(-50%);
+    width:160%; height:260px; border-radius:50%;
+    background:linear-gradient(120deg, var(--purple), #4c1d95 60%, #2563eb);
+  }
+  footer{ background:linear-gradient(120deg, var(--purple), #4c1d95 60%, #2563eb); padding:0 0 70px; text-align:center; position:relative; z-index:2; }
+  footer .wrap{ padding-top:10px; }
+  footer h2.section-title{ color:#fff; }
+  footer p{ color:rgba(255,255,255,0.85); max-width:52ch; margin:0 auto 30px; font-size:15px; }
+  .contact-links{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+  .contact-links a{
+    text-decoration:none; font-size:14px; font-weight:600; padding:13px 26px; border-radius:6px;
+    transition:transform 0.2s ease;
+  }
+  .contact-links a.primary{ background:#fff; color:var(--purple); }
+  .contact-links a.secondary{ border:1px solid rgba(255,255,255,0.6); color:#fff; }
+  .contact-links a:hover{ transform:translateY(-2px); }
+  .fine-print{ margin-top:40px; font-size:12px; color:rgba(255,255,255,0.7); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; animation:none !important; }
+    .reveal, .reveal-stagger > *{ opacity:1 !important; transform:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.4"><path d="M12 2 21 7v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg></span>
+      <span>Talha Codesd</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+  <div id="mobile-menu">
+    <a href="#experience">Experience</a>
+    <a href="#services">Services</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div id="top">
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Backend Development &amp; Systems</p>
+          <h1 class="name sora">Talha Codesd<br>builds systems that run.</h1>
+          <p class="summary">I develop with <strong>Laravel, CodeIgniter, React, Vue.js and Node.js</strong> — CRM &amp; POS systems, e-commerce stores, SaaS products, landing pages, blogs and portfolios, plus API and third-party integrations.</p>
+          <a class="outline-btn" href="#projects">See Projects →</a>
+        </div>
+
+        <div class="iso-stage" aria-hidden="true">
+          <div class="iso-tower t1">
+            <div class="beam" style="height:120px;"></div>
+            <svg width="90" height="78" viewBox="0 0 90 78">
+              <polygon points="45,0 90,20 45,40 0,20" fill="#8b5cf6"/>
+              <polygon points="0,20 45,40 45,78 0,58" fill="#5b21b6"/>
+              <polygon points="90,20 45,40 45,78 90,58" fill="#6d28d9"/>
+            </svg>
+          </div>
+          <div class="iso-tower t2">
+            <div class="beam" style="height:170px; width:34px;"></div>
+            <svg width="110" height="96" viewBox="0 0 110 96">
+              <polygon points="55,0 110,24 55,48 0,24" fill="#a78bfa"/>
+              <polygon points="0,24 55,48 55,96 0,72" fill="#5b21b6"/>
+              <polygon points="110,24 55,48 55,96 110,72" fill="#7c3aed"/>
+            </svg>
+          </div>
+          <div class="iso-tower t3">
+            <div class="beam" style="height:100px;"></div>
+            <svg width="80" height="70" viewBox="0 0 80 70">
+              <polygon points="40,0 80,18 40,36 0,18" fill="#22d3ee"/>
+              <polygon points="0,18 40,36 40,70 0,52" fill="#0e7490"/>
+              <polygon points="80,18 40,36 40,70 80,52" fill="#0891b2"/>
+            </svg>
+          </div>
+
+          <div class="particle" style="left:20%; bottom:40%; animation-delay:0s;"></div>
+          <div class="particle" style="left:45%; bottom:10%; animation-delay:1.2s;"></div>
+          <div class="particle" style="left:72%; bottom:46%; animation-delay:2s;"></div>
+          <div class="particle" style="left:55%; bottom:20%; animation-delay:0.6s;"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="experience" class="reveal">
+    <div class="wrap">
+      <div class="section-head"><h2 class="section-title">Exp<span class="accent">erience</span></h2></div>
+      <div class="timeline">
+
+        <div class="role">
+          <p class="when">Jan 2023 — Present</p>
+          <h3>Backend Developer</h3>
+          <p class="where">HaddockSoft, Sahiwal</p>
+          <ul>
+            <li>Built and maintain a large-scale web application on PHP and Laravel, including the data models and database structure behind it.</li>
+            <li>Integrated third-party payment and data-sync APIs, with testing and debugging to keep transactions reliable.</li>
+            <li>Worked with the frontend team to connect interfaces to backend logic, and directly with project managers to scope and deliver client work.</li>
+            <li>Built point-of-sale functionality for retail clients.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <p class="when">Jan — Mar 2025</p>
+          <h3>Web Developer (Remote)</h3>
+          <p class="where">TecheSprit, Lahore</p>
+          <ul>
+            <li>Collaborated remotely with a development team building and maintaining client web applications in PHP and CodeIgniter.</li>
+            <li>Contributed across the stack, from front-end pages to backend logic.</li>
+            <li>Kept work in sync with the team through Git and cPanel deployments, with regular code review.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <p class="when">Prior</p>
+          <h3>Backend Developer Intern</h3>
+          <p class="where">HaddockSoft</p>
+          <ul>
+            <li>Designed and built RESTful APIs to move data cleanly between systems.</li>
+            <li>Optimized slow database queries to improve application performance.</li>
+            <li>Gathered requirements directly from stakeholders and delivered against agreed timelines.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">What I b<span class="accent">uild</span></h2>
+        <span class="section-note">Available for freelance &amp; contract work</span>
+      </div>
+      <div class="service-grid reveal-stagger">
+        <div class="service-card"><div class="num">01</div><h3>CRM &amp; POS systems</h3><p>Custom CRM and point-of-sale builds on Laravel — inventory, orders, dashboards and reporting, including real estate lead handling.</p></div>
+        <div class="service-card"><div class="num">02</div><h3>E-commerce &amp; SaaS</h3><p>Online stores and subscription-based SaaS products — catalogs, checkout, accounts and billing, built to scale.</p></div>
+        <div class="service-card"><div class="num">03</div><h3>Landing pages, blogs &amp; portfolios</h3><p>Fast, conversion-focused landing pages, blogging platforms and portfolio sites — clean, responsive and quick to load.</p></div>
+        <div class="service-card"><div class="num">04</div><h3>API &amp; third-party integration</h3><p>Payments, SMS/WhatsApp notifications and data sync — connected cleanly with React, Vue or Node.js, tested end to end.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="wrap">
+      <div class="section-head"><h2 class="section-title">Sk<span class="accent">ills</span></h2></div>
+      <div class="skill-groups">
+        <div class="skill-group"><h4>Backend</h4><div class="chip-row"><span class="chip">Core PHP</span><span class="chip">Laravel</span><span class="chip">CodeIgniter</span><span class="chip">Node.js</span><span class="chip">RESTful APIs</span></div></div>
+        <div class="skill-group"><h4>Frontend</h4><div class="chip-row"><span class="chip">React</span><span class="chip">Vue.js</span><span class="chip">JavaScript</span><span class="chip">HTML &amp; CSS</span><span class="chip">Bootstrap</span></div></div>
+        <div class="skill-group"><h4>Data &amp; Systems</h4><div class="chip-row"><span class="chip">MySQL</span><span class="chip">CRM</span><span class="chip">POS</span><span class="chip">ERP</span></div></div>
+        <div class="skill-group"><h4>Workflow</h4><div class="chip-row"><span class="chip">Git &amp; GitHub</span><span class="chip">cPanel</span><span class="chip">Project Mgmt</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="wrap">
+      <div class="section-head"><h2 class="section-title">Sele<span class="accent">cted work</span></h2></div>
+      <div class="project-grid reveal-stagger">
+        <a class="project-row" href="https://www.luxliving.ae" target="_blank" rel="noopener"><span><span class="pname">Luxliving</span><br><span class="pclient">HaddockSoft</span></span><span class="purl">↗</span></a>
+        <a class="project-row" href="https://www.staging.ibazar.com.pk" target="_blank" rel="noopener"><span><span class="pname">Ibazar</span><br><span class="pclient">HaddockSoft</span></span><span class="purl">↗</span></a>
+        <a class="project-row" href="https://www.reyeselsamad.ae/" target="_blank" rel="noopener"><span><span class="pname">Reya Samad</span><br><span class="pclient">HaddockSoft</span></span><span class="purl">↗</span></a>
+        <a class="project-row" href="https://www.gogreenuae.ae" target="_blank" rel="noopener"><span><span class="pname">GoGreen</span><br><span class="pclient">HaddockSoft</span></span><span class="purl">↗</span></a>
+        <a class="project-row" href="https://www.goacarrepair.com" target="_blank" rel="noopener"><span><span class="pname">GoaCarRepair</span><br><span class="pclient">HaddockSoft</span></span><span class="purl">↗</span></a>
+        <a class="project-row" href="https://sevelinbeauty.com" target="_blank" rel="noopener"><span><span class="pname">Sevelin Beauty</span><br><span class="pclient">HaddockSoft</span></span><span class="purl">↗</span></a>
+        <a class="project-row" href="https://diyautomation.pk/" target="_blank" rel="noopener"><span><span class="pname">Diy Automation</span><br><span class="pclient">TecheSprit</span></span><span class="purl">↗</span></a>
+        <a class="project-row" href="https://abdultraders.com/" target="_blank" rel="noopener"><span><span class="pname">Abdul Traders</span><br><span class="pclient">TecheSprit</span></span><span class="purl">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-wrap" aria-hidden="true"><div class="wave-shape"></div></div>
+  <footer id="contact" class="reveal">
+    <div class="wrap">
+      <h2 class="section-title">Let's b<span style="color:#fff; opacity:0.8;">uild something</span></h2>
+      <p>Open to backend and full-stack work — Laravel builds, CRM/POS/e-commerce systems, API integrations, or fixing and extending an existing product.</p>
+      <div class="contact-links">
+        <a class="primary" href="mailto:talhaphpdeveloper@gmail.com">Email Me</a>
+        <a class="secondary" href="tel:03187428640">Call — 0318 7428640</a>
+      </div>
+      <p class="fine-print">Sahiwal, Punjab, Pakistan · English · Urdu</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    navToggle.textContent = isOpen ? '✕' : '☰';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      navToggle.textContent = '☰';
+    });
+  });
+
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
   }
 </script>
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="favicon_io/site.webmanifest">
 
-    <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- css links -->
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        #loom-companion-mv3{
-            display: none !important;
-        }
-        .portfolio-box{
-            height: 250px;
-        }
-        .portfolio-box img{
-            height: 100%;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- header design -->
-    <header class="header">
-        <a href="#" class="logo">Portfolio</a>
-
-        <i class='bx bx-menu' id="menu-icon"></i>
-
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- home section design -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <!-- <h3>Hy, I </h3> -->
-            <h1>Talha Rasheed</h1>
-            <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>Welcome to my portfolio! Here you will find examples of my work and skills as a <span>Backend
-                    Developer</span> | <span>PHP Developer</span> | <span>Codenightier</span> |
-                <span>Laravel</span> |  <span>POS</span>.
-            </p>
-            <div class="social-media">
-                <a href="#"><i class='bx bxl-linkedin'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="https://github.com/Talha-Rasheed-dev"><i class='bx bxl-github'></i></a>
-                <a href="#"><i class='bx bxl-facebook'></i></a>
-                <a href="mailto:talhaphpdeveloper@gmail.com"><i class='bx bxl-gmail'></i></a>
-                <a href="tel:+923187428640"><i class='bx bx-phone-call'></i></a>
-            </div>
-            <a href="CV/Talha CV.pdf" class="btn">Download CV</a>
-        </div>
-        <div class="home-img" style="width:80%;">
-            <img src="img/talhamainimg.png" alt="my pic" style="border-radius: 50%; width: 100%;">
-        </div>
-    </section>
-
-    <!-- about section design -->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="img/talha.jpeg" alt="my-img" style="border-radius:50%;">
-        </div>
-
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Backend Developer!</h3>
-            <p>As a passionate Backend Developer with a BS in Information Technology (IT) and One year of experience in web
-                development, I have developed a diverse skill set in <span>CSS3</span>, <span>HTML5</span>,
-                <span>JavaScript</span>, <span>PHP</span>,<span>API</span>,<span>Livewire</span>,<span>Codnightier</span>,<span>Laravel</span>
-                and <span>POS</span>
-                with a special focus on PHP for cross-platform development. I strive to stay up-to-date with
-                the latest trends and technologies in the field, and I'm always eager to learn new things. My strong
-                attention to detail, problem-solving abilities, and collaborative mindset make me a valuable team player
-                who is dedicated to delivering high-quality work that meets the needs of clients and users.
-            </p>
-            <p>
-                Outside of work, I enjoy playing sports like <span>Football</span>, <span>Chess</span>, and
-                <span>Cricket</span>, which help me stay active and
-                maintain a healthy work-life balance. These hobbies have also taught me the importance of strategy,
-                teamwork, and perseverance, which I apply to my work as a Backend Developer.
-            </p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-    </section>
-
-    <!-- Services section  -->
-<!-- Services section  -->
-<section class="services" id="services">
-    <h2 class="heading">My <span>Services</span></h2>
-    <div class="services-container">
-
-        <div class="services-box">
-            <i class='bx bx-code-alt'></i>
-            <h3>Custom Web Development</h3>
-            <p>Professional, modern, and responsive websites tailored to your business needs with secure and scalable solutions.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-        <div class="services-box">
-            <i class='bx bx-server'></i>
-            <h3>Backend Development</h3>
-            <p>PHP (Core, Laravel, CodeIgniter) backend solutions, RESTful APIs, and robust database management for high-performance systems.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-        <div class="services-box">
-            <i class='bx bx-cart'></i>
-            <h3>E-Commerce Websites</h3>
-            <p>Custom e-commerce stores with product management, cart, checkout, payment gateway integration, and secure admin dashboards.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-        <div class="services-box">
-            <i class='bx bx-building-house'></i>
-            <h3>Real Estate Websites</h3>
-            <p>Specialized property listing platforms with advanced search, filters, maps, and inquiry forms to grow your real estate business.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-        <div class="services-box">
-            <i class='bx bx-desktop'></i>
-            <h3>POS Systems</h3>
-            <p>Point of Sale software for retail and restaurants with inventory, billing, reporting, and multi-user management features.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-        <div class="services-box">
-            <i class='bx bx-briefcase-alt'></i>
-            <h3>ERP Solutions</h3>
-            <p>Enterprise solutions to manage HR, finance, employees, and workflow automation for businesses of all sizes.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-        <div class="services-box">
-            <i class='bx bx-line-chart'></i>
-            <h3>SEO & Optimization</h3>
-            <p>On-page SEO, performance optimization, and site speed improvements to boost visibility and ranking on search engines.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-        <div class="services-box">
-            <i class='bx bx-cog'></i>
-            <h3>Custom Business Applications</h3>
-            <p>Tailor-made web applications like CRM, inventory systems, and client management tools designed to match your business processes.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-
-    </div>
-</section>
-
-
-    <!-- Portfolio section  -->
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Projects</span></h2>
-
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <a href="https://www.goacarrepair.com/" target="_blank">
-                <img src="img/portfolio pics/goa.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>Goa Car Repair</h4>
-                    <p>First Project in PHP . In which services provide.</p>
-                  
-                </div>
-              </a>
-            </div>
-
-            <div class="portfolio-box">
-                <a href="https://www.ibazar.com.pk/" target="_blank">
-                <img src="img/portfolio pics/ibazar-banner.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>Ibazar</h4>
-                    <p>ibazar.com.pk is a dynamic e-commerce platform designed to provide a seamless online shopping experience across Pakistan.</p>
-                </div>
-                </a>
-            </div>
-            
-            <div class="portfolio-box">
-                <a href="https://www.gogreenuae.ae/" target="_blank">
-                <img src="img/portfolio pics/gogreen.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>GoGreen</h4>
-                    <p>Go green also services provide webiste  in ehich organic cleaning , mechinical etc.</p>
-                </div>
-                </a>
-            </div>
-
-            <div class="portfolio-box">
-                <a href="https://www.luxliving.ae/" target="_blank">
-                <img src="img/portfolio pics/Luxliving.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>Luxliving</h4>
-                    <p>Luxliving a Properties sale website in which properties are sale and rent</p>
-                </div>
-                </a>
-            </div>
-
-            <div class="portfolio-box">
-                <a href="https://oneearthproperties.com/" target="_blank">
-                <img src="img/portfolio pics/onearth.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>Onearth PROPERTIES</h4>
-                    <p>Onearth a Properties sale website in which properties are sale and rent</p>
-                   <i  class='bx bx-link-external'></i>
-                </div>
-                </a>
-            </div>
-            <div class="portfolio-box">
-                <a href="" target="_blank">
-                <img src="img/portfolio pics/pos-dash.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>Custom POS System</h4>
-                    <p>Developed a comprehensive Point of Sale (POS) system tailored for retail business operations. The system streamlines inventory and sales management</p>
-                   <i  class='bx bx-link-external'></i>
-                </div>
-                </a>
-            </div>
-            <div class="portfolio-box">
-                <a href="https://www.reyeselsamad.ae/" target="_blank">
-                <img src="img/portfolio pics/reyesamad.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>Reyeselsamad</h4>
-                    <p>Reyeselsamad Real Estate Properties  website in which properties are sale and rent</p>
-                </div>
-                </a>
-            </div>
-            <!-- 
-            <div class="portfolio-box">
-                <img src="img/portfolio pics/portfolio 4.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>E-Clinic 2.0</h4>
-                    <p> E-Clinic, where we offer a range of sections and services to cater to your healthcare
-                        needs. Our website is designed to give you a seamless and user-friendly experience.</p>
-                    <a href="https://naeem-ur-rahman.github.io/E-Clinic-Web-Project-2.0/"><i
-                            class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="img/portfolio pics/portfolio1.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>CS Society</h4>
-                    <p>About
-                        A website for my university's Computer Science Society. Its Introduction to
-                        the society, showcasing its activities and upcoming events.</p>
-                    <a href="https://naeem-ur-rahman.github.io/Computer-Science-Society-Website/"><i
-                            class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="img/portfolio pics/portfolio3.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>CSS Elements</h4>
-                    <p>During my learning phase, I have uploaded various CSS web elements that have proven to helpful in
-                        reusing and implementing them in future projects.</p>
-                    <a href="https://naeem-ur-rahman.github.io/Web-CSS-Elements/"><i
-                            class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="img/portfolio pics/Resposive Carosel.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>Responsive Carosel</h4>
-                    <p>Custom Resposive Carosel with pagination</p>
-                    <a href="https://naeem-ur-rahman.github.io/Web-CSS-Elements/Responsive%20Carosel/index.html"><i
-                            class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="img/portfolio pics/Age Calculator.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>Age Calculator</h4>
-                    <p>The Age Calculator is a handy tool designed to determine a person's age based on their birth date
-                        and the current date.</p>
-                    <a href="https://naeem-ur-rahman.github.io/Web-CSS-Elements/Age%20Calculator/index.html"><i
-                            class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="img/portfolio pics/portfolio2.png" alt="portfolio">
-                <div class="portfolio-layer">
-                    <h4>E-Clinic</h4>
-                    <p>Web site Design for Desktop Screen. Despite having no prior knowledge of responsiveness.</p>
-                    <a href="https://naeem-ur-rahman.github.io/E-Clinic-Web-Project/"><i
-                            class='bx bx-link-external'></i></a>
-                </div>
-            </div> -->
-
-
-        </div>
-    </section>
-
-    <!-- contacts Section  -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-
-        <form action="form-to-email/submit.php" method="post">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name" name="name">
-                <input type="email" placeholder="Email Address">
-            </div>
-            <div class="input-box">
-                <input type="number" placeholder="Moblie Number">
-                <input type="text" placeholder="Email Subject" name="email">
-            </div>
-            <!-- <div class="mb-3">
-                <label  id="captcha"></label>
-                <input type="num" name="captcha-response">
-            </div>
-            <input type="hidden" name="captcha-solution"> -->
-            <textarea name="message" id=""  cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit"  value="Send Message" class="btn">
-        </form>
-    </section>
-
-    <!-- footer design -->
-    <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2023 by NuRs | All Rights Reserved.</p>
-        </div>
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
-        </div>
-    </footer>
-
-    <!-- scrollReveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!-- typed js  -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-    <!-- js code  -->
-    <script src="js/script.js"></script>
 </body>
-
 </html>
